@@ -22,9 +22,11 @@
 
 .upload-content {
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
+
     justify-content: center;
     align-items: center;
+
     gap: 50px;
     margin: 10%;
 }
@@ -33,14 +35,21 @@
     padding: 20px;
     border-radius: 4rem;
     width: 50%;
+    
+
 }
 
 .preview {
     display: flex;
     top: 10px;
+
+    padding: 80px;
+    background: linear-gradient(to top left, var(--blue));
 }
 
 /* Mobile */
 @media (max-width: 600px) {
-
+    .upload-content {
+        flex-direction: column-reverse;
+    }
 }
