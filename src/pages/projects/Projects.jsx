@@ -9,7 +9,7 @@ import { useNavigate } from "react-router-dom";
 import useStore from "../../store/Store.jsx"
 
 import "../../styles/Projects.css"
-  // i notice that when i click a card, it gets removed and the other are shifting backwards and when i close, it comes back again like normal
+
 function Projects() {
     const navigate = useNavigate();
 

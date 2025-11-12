@@ -35,7 +35,7 @@
     padding: 20px;
     border-radius: 4rem;
     width: 50%;
-    
+
 
 }
 
@@ -44,7 +44,6 @@
     top: 10px;
 
     padding: 80px;
-    background: linear-gradient(to top left, var(--blue));
 }
 
 /* Mobile */
