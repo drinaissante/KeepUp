@@ -2,13 +2,29 @@ import { useState } from "react";
 
 function ZoomableCard({ project }, key) {
     const [ active, setActive ] = useState(false);
+    const [ closing, setClosing ] = useState(false);
+
+    const handleOpen = () => {
+        setActive(true);
+        setClosing(false);
+    }
+
+    const handleClose = (e) => {
+        e.stopPropagation();
+        setClosing(true);
+
+        setTimeout(() => {
+            setActive(false);
+            setClosing(false);
+        }, 500);
+    }
 
     return (
         <>
             <div 
                 key={key}
-                className={`project ${active ? "active" : ""}`}
-                onClick={() => setActive(true)}
+                className={`project ${active ? "active" : ""} ${closing ? "closing" : "" }`}
+                onClick={handleOpen}
             >
                 <div>
                     {project.id} | {project.text}
@@ -22,8 +38,8 @@ function ZoomableCard({ project }, key) {
             </div>
 
             {active && (
-                <div className="overlay" onClick={() => setActive(false)}>
-                    <button className="close-btn" onClick={() => setActive(false)}>X</button>
+                <div className={`overlay ${closing ? "closing" : ""} `}onClick={handleClose}>
+                    <button className="close-btn" onClick={handleClose}>X</button>
                 </div>
             )}
         </>
