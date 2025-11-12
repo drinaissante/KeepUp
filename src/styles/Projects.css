@@ -35,20 +35,22 @@
     
     border-radius: 2rem;
     
+    position: relative;
+    z-index: 1;
 }
 
 .project.active {
     position: fixed;
 
-    top: 60%;
-    left: 50%;
-    width: 90vw;
+    top: 10%;
+    width: 85vw;
     height: 90vh;
+
+    border: 20px;
 
     background-color: white;
     color: black;
     
-    transform: translateY(-50%, -60%);
     animation: slideUp 0.5s forwards ease-in-out;
 
     border-radius: 15px;
@@ -105,6 +107,21 @@
     cursor: pointer;
 }
 
+.project.active.closing {
+    animation: slideDown 0.5s forwards ease-in-out;
+}
+
+
+@keyframes fadeOut {
+    from {
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    to {
+        background-color: rgba(0, 0, 0, 0);
+    }
+}
+
 /* Mobile */
 @media (max-width: 600px) {
     .title {
@@ -119,6 +136,10 @@
         width: 70%;
         margin: 0;
     }
+
+    .project.active {
+        width: 70vw;
+    }
 }
 
 /* keyframes for sliding up */
@@ -129,5 +150,16 @@
 
     to {
         transform: translateY(0);
+    }
+}
+
+/* keyframes for sliding down */
+@keyframes slideDown {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(100%);
     }
 }
