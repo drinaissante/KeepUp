@@ -1,0 +1,17 @@
+.nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+
+    background: linear-gradient(to right, var(--blue));
+    color: white;
+
+    position: sticky;
+    z-index: 100;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}

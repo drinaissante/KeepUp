@@ -1,0 +1,45 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  
+
+  --red: #BF0D3E;
+  --blue: #0032A0;
+  --white: #FFFFFF;
+  --yellow: #FED141;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+
+  transition: width 0.5s ease, height 0.5s ease, padding 0.5s ease, border-radius 0.5s ease;
+}
+
+.logo {
+  margin-left: 10px;
+  height: 50px;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
