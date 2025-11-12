@@ -34,6 +34,53 @@
     padding: 50px;
     
     border-radius: 2rem;
+    
+}
+
+.project.active {
+    position: fixed;
+
+    top: 60%;
+    left: 50%;
+    width: 90vw;
+    height: 90vh;
+
+    background-color: white;
+    color: black;
+    
+    transform: translateY(-50%, -60%);
+    animation: slideUp 0.5s forwards ease-in-out;
+
+    border-radius: 15px;
+    z-index: 1000;
+}
+
+.overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 2rem;
+    background: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.project.active:hover {
+    background-color: white;
+    cursor: auto;
+}
+
+.project:hover {
+    background: rgba(0, 0, 255, 0.5);
+    cursor: pointer;
 }
 
 .content {
@@ -54,6 +101,8 @@
     border-radius: 2rem;
 
     padding: 50px;
+
+    cursor: pointer;
 }
 
 /* Mobile */
@@ -68,5 +117,17 @@
 
     .add-btn {
         width: 70%;
+        margin: 0;
+    }
+}
+
+/* keyframes for sliding up */
+@keyframes slideUp {
+    from {
+        transform: translateY(100%);
+    }
+
+    to {
+        transform: translateY(0);
     }
 }
